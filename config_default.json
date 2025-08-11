@@ -1,0 +1,54 @@
+{
+  "timebase_min": 5,
+  "horizon_hours": 24,
+  "site": {
+    "import_limit_kW": 15.0,
+    "export_limit_kW": 15.0,
+    "allow_grid_charge": true,
+    "allow_export": true
+  },
+  "battery_banks": [
+    {
+      "name": "bank1",
+      "capacity_kWh": 50.0,
+      "soc_min": 5.0,
+      "soc_max": 45.0,
+      "p_charge_max_kW": 10.0,
+      "p_discharge_max_kW": 10.0,
+      "eta_ch": 0.97,
+      "eta_dis": 0.97,
+      "soc_init_kWh": 25.0
+    },
+    {
+      "name": "bank2",
+      "capacity_kWh": 50.0,
+      "soc_min": 5.0,
+      "soc_max": 45.0,
+      "p_charge_max_kW": 10.0,
+      "p_discharge_max_kW": 10.0,
+      "eta_ch": 0.97,
+      "eta_dis": 0.97,
+      "soc_init_kWh": 25.0
+    }
+  ],
+  "inverters": [
+    {
+      "name": "invA",
+      "charge_cap_kW": 15.0,
+      "discharge_cap_kW": 15.0,
+      "banks": [
+        "bank1",
+        "bank2"
+      ]
+    }
+  ],
+  "economics": {
+    "deg_cost_per_kWh": 0.05,
+    "epsilon_penalty": 1e-06
+  },
+  "reserve": {
+    "enabled": false,
+    "backup_hours": 0.0,
+    "critical_load_kW": 0.0
+  }
+}
